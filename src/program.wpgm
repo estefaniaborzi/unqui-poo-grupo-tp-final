@@ -3,6 +3,7 @@ import wollok.game.*
 import soundProducer.*
 import Portada.*
 import manejadorDeNivel.*
+import trampas.*
 
 program tobyGame {
 	
@@ -14,6 +15,7 @@ program tobyGame {
 	
 	game.cellSize(64)
 	manejadorDeNivel.cargarNivel()
+	
 
 	game.start()
 }

@@ -4,37 +4,33 @@ import mounstros.*
 import huesos.*
 import Muro.*
 import repositorioDeMuros.*
-import trampas.*
 
-object nivel1{
+object nivel2{
 	
 method position() = game.origin()
 	
+	
 	method image() {
-	 	return "nivel1.png"
+	 	return "nivel2.png"
 	 }
 	 method song() {
-	 	return "sonidos/nivel1.mp3"
+	 	return "sonidos/nivel2.mp3"
 	 }
 	 
 	 method ubicarMounstros() {
-	 	const mounstros = repositorioDeMounstros.nivel1()
+	 	const mounstros = repositorioDeMounstros.nivel2()
 	 	mounstros.forEach{mounstro => game.addVisual(mounstro)}
 	 }
 	 
 	 method ubicarHuesos() {
-	 	const huesos = repositorioDeHuesos.nivel1()
+	 	const huesos = repositorioDeHuesos.nivel2()
 	 	huesos.forEach{hueso => game.addVisual(hueso)}
 	 }
 	
 	method ubicarMuros() {
-		const muros = repositorioDeMuros.nivel1()
+		const muros = repositorioDeMuros.nivel2()
 		muros.forEach{muro => game.addVisual(muro)}
-	}
-	
-	method ubicarTrampas(){
-		const trampas = repositorioDeTrampas.nivel1()
-		trampas.forEach{trampa => game.addVisual(trampa)}
+		
 	}
 	method ubicarToby(){
 		game.addVisual(toby)
@@ -42,10 +38,6 @@ method position() = game.origin()
 	
 	method setInputs(manejadorDeNivel) {
 		keyboard.space().onPressDo{ manejadorDeNivel.avanzarNivel() }
-		keyboard.up().onPressDo({ toby.mover(arriba, 1) })
-	keyboard.down().onPressDo({ toby.mover(abajo, 1) })
-	keyboard.left().onPressDo({ toby.mover(izquierda, 1)})
-	keyboard.right().onPressDo({ toby.mover(derecha, 1)})
 	}
 	
 	method agregaElementos() {
@@ -53,6 +45,5 @@ method position() = game.origin()
 		self.ubicarMounstros()
 		self.ubicarHuesos()
 		self.ubicarToby()
-		self.ubicarTrampas()
 	}
 }
